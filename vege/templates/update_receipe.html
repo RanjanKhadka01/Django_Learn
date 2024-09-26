@@ -1,0 +1,45 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block start %}
+
+<div class="container mt-5">
+  <form
+    class="col-6 mx-auto card p-3 shadow-lg"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %}
+    <h2>Update Receipe</h2>
+    <hr />
+    <div class="mb-3">
+      <label class="form-label">Receipe Name</label>
+      <input
+        type="text"
+        name="receipe_name"
+        class="form-control"
+        value="{{receipe.recepie_name}}"
+        aria-describedby="emailHelp" required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Receipe Description</label>
+      <textarea name="receipe_description" required class="form-control">{{receipe.receipe_discription}}</textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Receipe Image</label>
+      <input
+        type="file"
+        name="receipe_image"
+        class="form-control"
+        aria-describedby="emailHelp" required
+      />
+    </div>
+    <button type="submit" class="btn btn-info">Update Receipe</button>
+  </form>
+  
+
+</div>
+{% endblock %}
