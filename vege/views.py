@@ -6,8 +6,9 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
+# from django.contrib.auth import get_user_model
 
-
+# User = get_user_model()
 
 # Create your views here.
 @login_required(login_url='/login/')
@@ -39,8 +40,8 @@ def receipe(request):
 
 
 @login_required(login_url='/login/')
-def update_receipe(request, id):
-  queryset = Recepie.objects.get(id = id)
+def update_receipe(request, slug):
+  queryset = Recepie.objects.get(slug = slug)
   if request.method == 'POST':
     data = request.POST
 

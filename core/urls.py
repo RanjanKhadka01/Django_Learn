@@ -27,7 +27,7 @@ urlpatterns = [
     
     path('receipe/',receipe, name='receipe'),
     path('delete_receipe/<id>/',delete_receipe, name='delete_receipe'),
-    path('update_receipe/<id>/',update_receipe, name='update_receipe'),
+    path('update_receipe/<slug>/',update_receipe, name='update_receipe'),
 
     path('login/', login_page, name='login'),
     path('register/', register, name='register'),
