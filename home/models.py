@@ -10,6 +10,8 @@ class Student(models.Model):
   # image = models.ImageField(null=True, blank=True)
   # file = models.FileField()
 
+
+
 class Car(models.Model):
   name = models.CharField(max_length=100)
   speed = models.IntegerField(default=50)

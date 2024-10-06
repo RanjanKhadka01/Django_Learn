@@ -1,6 +1,8 @@
 {% extends "base.html" %} {% block start %}
 <h1>Welcome to Django</h1>
 
+<a class="btn btn-success" href="{% url "send_email" %}">Send Mail</a>
+
 <h4>{{text | truncatechars:10}}</h4>
 
 <table class="table">
